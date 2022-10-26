@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0px;
+            }
+            div {
+                width: 100%;
+                height: 1000px;
+                text-align: 50px;
+            }
+            .s1 {
+                background-color: aqua;
+            }
+            .s2 {
+                background-color: aquamarine;
+            }
+            .s3 {
+                background-color: blue;
+            }
+            .s4 {
+                background-color: brown;
+            }
+            .s5 {
+                background-color: dimgrey;
+            }
+            .s6 {
+                background-color: cadetblue;
+            }
+            
+            .progress-container {
+                top: 0;
+              width: 100%;
+              height: 8px;
+              background: #ccc;
+              position: fixed;
+            }
+
+            .progress-bar {
+              height: 8px;
+              background: #04AA6D;
+              width: 0%;
+            }
+        </style>
+    </head>
+    <body id="test">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+            <div id="s1">
+                section1
+            </div>
+            <div id="s2">
+                section2
+            </div>
+            <div id="s3">
+                section3
+            </div>
+            <div id="s4">
+                section4
+            </div>
+            <div id="s5">
+                section5
+            </div>
+            <div id="s6">
+                section6
+            </div>
+    </body>
+</html>
+<script>
+    window.onscroll = function() {
+        myFunction();
+        //console.info(isInViewport("s2"));
+    };
+    function myFunction() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.getElementById("test").clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+    }
+    const box = document.querySelector('#s1');
+    const rect = box.getBoundingClientRect();
+    const isInViewport = rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+    console.log(isInViewport);  
+    
+    /*function isInViewport(el) {
+    const rect = document.getElementById(el).getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+    );
+}
+    
+    /*document.addEventListener('scroll', function (){
+        if(isInViewport("s2")){
+            console.log("s2")
+        }
+    },{
+        passive: true
+    });*/
+</script>
