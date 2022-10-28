@@ -1,0 +1,70 @@
+.mySlides {
+    display: none;
+    max-width: 70vw;
+    max-height: 70vh;
+}
+
+.mySlides img {
+    max-width: 70vw;
+    max-height: 70vh;
+    width: auto;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 70vw;
+  position: relative;
+  margin: 0px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  width: auto;
+  font-weight: bold;
+  font-size: 1.6vmax;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  font-size: 1.5vmax;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 0.8vmax;
+  width: 0.8vmax;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dot:nth-child(1){
+    margin: 0;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}

@@ -1,0 +1,93 @@
+/* short left rig float-------------------------------------------------------------------------- */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+/* Main Navbar style----------------------------------------------------------------------------- */
+#navbar {
+    overflow: hidden;
+    transition: 0.8s;
+    z-index: 100;
+    width: 100%;
+    white-space: nowrap;
+}
+
+#navbar a {
+    display: block;
+    text-align: center;
+    padding: 0.8vmax 0.7vmax;
+    text-decoration: none;
+    font-size: 54%;
+    transition: 0.3s;
+    font-family: 'Prompt', sans-serif;
+}
+/* Addition Navbar------------------------------------------------------------------------------ */
+.n {
+    background-color: transparent;
+    margin-top: 10px;
+}
+
+.n a {
+    color: White;
+}
+.n a:hover {
+    color: #dedede;
+}
+/* Addition Navbar to stick top----------------------------------------------------------------- */
+.sticky {
+    position: fixed;
+    top: 0;
+    background-color: var(--desknav-bg);
+    color: var(--desknav-txt);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sticky a {
+    color: var(--sticky-txt);
+}
+
+.sticky .aHo:hover {
+    color: var(--sticky-hover);
+}
+
+.sticky + .content {
+    padding-top: 60px;
+}
+
+.dropdown {
+    position: fixed;
+    right: 2%;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: var(--dropdown-bg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 20px 0 rgba(0, 0, 0, 0.19);
+    min-width: auto;
+    transition: 0.3s;
+}
+
+.dct {
+    background-color: transparent;
+}
+
+.dropdown:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-content a {
+    color: var(--dropdown-txt);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+#navbar .aHo i {
+    font-size: 1.2vmax;
+}

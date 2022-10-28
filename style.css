@@ -1,0 +1,252 @@
+@import "/stylesheet/theme.css";
+@import "/stylesheet/page.css";
+@import "/stylesheet/desknav.css";
+@import "/stylesheet/sidemenu.css";
+@import "/stylesheet/slider.css";
+@import "/stylesheet/slideshow.css";
+/* Top section background------------------------------------------------------------------------ */
+.img-back {
+    width: 100%;
+    height: 60vh;
+    z-index: -1;
+    position: absolute;
+    background-color: #0652fd;
+    top: -10px;
+    /*background-image: url(img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+}
+
+.sphead {
+    font-size: 200%;
+    color: black;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.box {
+    width: 15vmax;
+    height: auto;
+    background-color: var(--box-bg);
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box img {
+    padding-top: 10%;
+    height: 10vmax;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.txt-2-box {
+    color: var(--box-txt);
+    font-size:1.4vmax;
+    padding-top: 1vmax;
+    margin-bottom: 30px;
+}
+
+.txt-1-box {
+    font-size:1.6vmax;
+}
+
+
+
+
+
+
+
+
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /*margin-left: 25%;*/
+    justify-content: center;
+    width: 100%;
+}
+
+.column {
+  /*flex: 25%;*/
+  padding: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .column {
+    flex: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+.row2 {
+    white-space: nowrap;
+}
+
+.row2 > li {
+    display: inline-block;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rowl {
+    white-space: nowrap;
+    margin-left: -100;
+}
+
+.rowl > li {
+    display: inline-block;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.rowl > li > img {
+    width: 250px;
+    height: auto;
+}
+
+.rowl > li > h2 {
+    text-align: left;
+    color: #ffb300;
+}
+
+.rowl > li > div {
+    text-align: left;
+    color: black;
+}
+
+.footer {
+    height: 300px;
+    width: auto;
+    background-color: white;
+    padding: 5px;
+    bottom: 0;
+    margin-left: -35;
+}
+
+.im {
+    width: 1.2vw;
+    height: auto;
+}
+
+.mainimg {
+    animation: updown 5s ease infinite;
+    width: 150px;
+    height: auto;
+    margin-top: 70px;
+    margin-bottom: 250px;
+}
+
+.mainimg2 {
+    width: 98px;
+    height: auto;
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(-20%);
+    }
+    50% {
+        transform: translateY(20%);
+    }
+    100% {
+        transform: translateY(-20%);
+    }
+}
+
+.imgbox {
+    width: 50%;
+    height: auto;
+}
+
+.footer a{
+    text-decoration: none;
+    transition: 0.3s;
+    color: black;
+    font-family: 'Prompt', sans-serif;
+}
+.footer a:hover {
+    color:#0652fd;
+}
+
+.footer div{
+    text-decoration: none;
+    color: black;
+    font-family: 'Prompt', sans-serif;
+}
+
+.th:lang(en) {
+    display: none;
+}
+
+.enSwitch:lang(th) {
+    display: none;
+}
+
+.spacer {
+    display: block;
+    content: "";
+    margin-top: 15vh;
+}
+
+.spacer2 {
+    display: block;
+    content: "";
+    margin-top: 25vh;
+}
+
+.grid-container-2 {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 12vmax auto;
+    width: 55vw;
+}
+.grid-container-2 .grid-item {
+    padding: 15px;
+    text-align: left;
+    font-size: 1.2vmax;
+}
+
+.contact {
+    color: var(--contact-color);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10vmax, 1fr));
+}
+    
+.grid-element {
+    padding: 20px;
+}
+.grid-element i:nth-child(1) {
+    font-size: 3vmax;
+    margin-bottom: 15px;
+}

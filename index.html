@@ -1,107 +1,639 @@
-<html>
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
     <head>
-        <style>
-            body {
-                margin: 0px;
-            }
-            div {
-                width: 100%;
-                height: 1000px;
-                text-align: 50px;
-            }
-            .s1 {
-                background-color: aqua;
-            }
-            .s2 {
-                background-color: aquamarine;
-            }
-            .s3 {
-                background-color: blue;
-            }
-            .s4 {
-                background-color: brown;
-            }
-            .s5 {
-                background-color: dimgrey;
-            }
-            .s6 {
-                background-color: cadetblue;
-            }
-            
-            .progress-container {
-                top: 0;
-              width: 100%;
-              height: 8px;
-              background: #ccc;
-              position: fixed;
-            }
-
-            .progress-bar {
-              height: 8px;
-              background: #04AA6D;
-              width: 0%;
-            }
-        </style>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="./img/icon.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Prompt&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portfolio</title>
     </head>
-    <body id="test">
-        <div class="progress-container">
-            <div class="progress-bar" id="myBar"></div>
+    <body>
+        <div id="home" class="img-back"></div>
+        <div class="deskmenu">
+            <div id="navbar" class="n">
+                <a style="margin-right:10%;" class="right">
+                    <div class="dropdown">
+                        <a class="dropbtn aHo">
+                            <i class="fa-solid fa-gears"></i> 
+                            <i class="th">ต้ังค่า</i>
+                            <i class="enSwitch">setting</i></a>
+                        <div id="dc" class="dropdown-content dct">
+                            <a>
+                                <i class="fa-solid fa-circle-half-stroke th" title="ธีม" style="background-color: white;border-radius: 50%;"></i>
+                                <i class="fa-solid fa-circle-half-stroke enSwitch" title="Theme" style="background-color: white;border-radius: 50%;color: black;"></i>
+                                <label class="switch">
+                                    <input type="checkbox" onchange="ST1();" id="TSW1">
+                                    <span class="slider"></span>
+                                </label>
+                            </a>
+                            <a>
+                                <i class="fa-solid fa-globe th" title="ภาษา" style="background-color: white;border-radius: 50%;"></i>
+                                <i class="fa-solid fa-globe enSwitch" title="Languages" style="background-color: white;border-radius: 50%;color: black;"></i>
+                                <label class="switch">
+                                    <input type="checkbox" onchange="SL1();" id="LSW1">
+                                    <span class="slider"></span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </a>
+                <a class="right aHo" href="#contact">
+                    <i class="fa-regular fa-comments fa-xs"></i> 
+                    <i class="th">ติดต่อ</i>
+                    <i class="enSwitch">Contact</i>
+                </a>
+                <a class="right aHo" href="#project">
+                    <i class="fa-solid fa-diagram-project fa-xs fa-xs"></i> 
+                    <i class="th">ผลงาน</i>
+                    <i class="enSwitch">Work Experience</i>
+                </a>
+                <a class="right aHo" href="#certi">
+                    <i class="fa-solid fa-award fa-xs"></i> 
+                    <i class="th">เกียรติบัตร</i>
+                    <i class="enSwitch">Certificates</i>
+                </a>
+                <a class="right aHo" href="#edu">
+                    <i class="fa-solid fa-graduation-cap fa-xs"></i> 
+                    <i class="th">ประวัติทางการศึกษา</i>
+                    <i class="enSwitch">Education</i>
+                </a>
+                <a class="right aHo" href="#about">
+                    <i class="fa-regular fa-address-card fa-xs"></i> 
+                    <i class="th">ประวัติส่วนตัว</i>
+                    <i class="enSwitch">Profile</i>
+                </a>
+                <a class="right aHo" href="#home">
+                    <i class="fa-solid fa-house fa-xs"></i> 
+                    <i class="th">หน้าหลัก</i>
+                    <i class="enSwitch">Home</i>
+                </a>
+                <a style="margin-left: 8%" href="" class="left"><img class="im" src="img/icon.png"/></a>
+            </div>
         </div>
-            <div id="s1">
-                section1
+        <div class="handmenu sticky">
+            <div id="menubtns" class="menubtn not-active" onclick="Nav()">
+                <span class="burger"></span>
+                <span class="burger"></span>
+                <span class="burger"></span>
             </div>
-            <div id="s2">
-                section2
+            <div id="Sidenav" class="sidenav">
+                <a class="aHo" href="#home" onclick="Nav()">
+                    <i class="fa-solid fa-house fa-xs"></i> 
+                    <i class="th">หน้าหลัก</i>
+                    <i class="enSwitch">Home</i>
+                </a>
+                <a class="aHo" href="#about" onclick="Nav()">
+                    <i class="fa-regular fa-address-card fa-xs"></i> 
+                    <i class="th">ประวัติส่วนตัว</i>
+                    <i class="enSwitch">Profile</i>
+                </a>
+                <a class="aHo" href="#edu" onclick="Nav()">
+                    <i class="fa-solid fa-graduation-cap fa-xs"></i> 
+                    <i class="th">ประวัติทางการศึกษา</i>
+                    <i class="enSwitch">Education</i>
+                </a>
+                <a class="aHo" href="#certi" onclick="Nav()">
+                    <i class="fa-solid fa-award fa-xs"></i> 
+                    <i class="th">เกียรติบัตร</i>
+                    <i class="enSwitch">Certificates</i>
+                </a>
+                <a class="aHo" href="#project" onclick="Nav()">
+                    <i class="fa-solid fa-diagram-project fa-xs fa-xs"></i> 
+                    <i class="th">ผลงาน</i>
+                    <i class="enSwitch">Work Experience</i>
+                </a>
+                <a class="aHo" href="#contact" onclick="Nav()">
+                    <i class="fa-regular fa-comments fa-xs"></i> 
+                    <i class="th">ติดต่อ</i>
+                    <i class="enSwitch">Contact</i>
+                </a>
+                <div class="bottom">
+                    <div class="splitBar"></div>
+                    <a>
+                        <i class="th">ธีม</i>
+                        <i class="enSwitch">Theme</i>
+                        <label class="switch" style="float: right;margin-right: 20px;">
+                            <input type="checkbox" onchange="ST2();" id="TSW2">
+                            <span class="slider"></span>
+                        </label>
+                    </a>
+                    <a>
+                        <i class="th">ภาษา</i>
+                        <i class="enSwitch">Languages</i>
+                        <label class="switch" style="float: right;margin-right: 20px;">
+                            <input type="checkbox" onchange="SL2();" id="LSW2">
+                            <span class="slider"></span>
+                        </label>
+                    </a>
+                </div>
             </div>
-            <div id="s3">
-                section3
+        </div>
+        <div id="main" style="transition: 0.5s;">
+            <div class="content">
+                <center>
+                    <br class="spacer">
+                    <a>
+                        <a Style="color: white;font-size: 4vw;" class="th">สวัสดี! ผมชื่อสิทธา ดาราพิสุทธิ์</a>
+                        <a Style="color: white;font-size: 5vw;" class="enSwitch">Hi! I'm Sittha Darapisut.</a><br><br>
+                        <a Style="color: white;font-size: 3vw;">Full-stack developer</a>
+                    </a>
+                    <br><br><br><br><br><br>
+                    <br class="spacer2">
+                    <br id="about"><br><br><br>
+                    <div class="row">
+                        <div class="column">
+                            <br>
+                            <img src="img/pro.png" style="width:25vmax;">
+                        </div>
+                        <div class="column" style="text-align: left;">
+                            <i class="th">ชื่อ-นามสกุล :</i>
+                            <i class="enSwitch">Name :</i>
+                            <br>
+                            <i class="th">นายสิทธา ดาราพิสุทธิ์</i>
+                            <i class="enSwitch">Sittha Darapisut</i>
+                            <br><br>
+                            <i class="th">ชื่อเล่น :</i>
+                            <i class="enSwitch">Nickname :</i>
+                            <br>
+                            <i class="th">ต้นกล้า</i>
+                            <i class="enSwitch">Tonkla</i>
+                            <br><br>
+                            <i class="th">ที่อยู่ :</i>
+                            <i class="enSwitch">Address :</i>
+                            <br>
+                            <i class="th">9/70 ซอยไซโล11 ต.สุรศักดิ์ อ.ศรีราชา จ.ชลบุรี 20110</i>
+                            <i class="enSwitch">9/70 silo.11 Surasak Si-racha Chon buri 20110 Thailand</i>
+                            <br><br>
+                            <i class="th">คติประจำตัว :</i>
+                            <i class="enSwitch">Quotes :</i>
+                            <br>
+                            <i class="th">คุณไม่สามารถบอกความรู้เป็นเปอร์เซ็นต์ได้<br>เพราะความรู้ไม่มีที่สิ้นสุด</i>
+                            <i class="enSwitch">You cannot tell the percentage of knowledge you have<br>because knowledge is infinite.</i>
+                            
+                            
+                            
+                            <!--<div class="grid-container-2">
+                                <div class="grid-item">
+                                    <i class="th">ชื่อ-นามสกุล :</i>
+                                    <i class="enSwitch">Name :</i>
+                                </div>
+                                <div class="grid-item">
+                                    <i class="th">นายสิทธา ดาราพิสุทธิ์</i>
+                                    <i class="enSwitch">Sittha Darapisut</i>
+                                </div>
+                                <div class="grid-item">
+                                    <i class="th">ชื่อเล่น :</i>
+                                    <i class="enSwitch">Nickname :</i>
+                                </div>
+                                <div class="grid-item">
+                                    <i class="th">ต้นกล้า</i>
+                                    <i class="enSwitch">Tonkla</i>
+                                </div>
+                                <div class="grid-item">
+                                    <i class="th">ที่อยู่ :</i>
+                                    <i class="enSwitch">Address :</i>
+                                </div>
+                                <div class="grid-item">
+                                    <i class="th">9/70 ซอยไซโล11 ต.สุรศักดิ์ อ.ศรีราชา จ.ชลบุรี 20110</i>
+                                    <i class="enSwitch">9/70 silo.11 Surasak Si-racha Chon buri 20110 Thailand</i>
+                                </div>
+                                <div class="grid-item">
+                                    <i class="th">คติประจำตัว :</i>
+                                    <i class="enSwitch">Quotes :</i>
+                                </div>
+                                <div class="grid-item">
+                                    <i class="th">คุณไม่สามารถบอกความรู้เป็นเปอร์เซ็นต์ได้<br>เพราะความรู้ไม่มีที่สิ้นสุด</i>
+                                    <i class="enSwitch">You cannot tell the percentage of knowledge you have<br>because knowledge is infinite.</i>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                    <br><br><br><br>
+                    <br id="edu"><br><br><br>
+                    <div class="school">
+                        <a Style="font-size: 2vmax;" class="th">ประวัติการศึกษา</a>
+                        <a Style="font-size: 3vmax;" class="enSwitch">School history</a>
+                        <div class="row">
+                            <div class="column">
+                                <div class="box">
+                                    <center>
+                                        <img class="imgbox" src="https://ds.ac.th/wp-content/uploads/2021/06/ds-300x300.png"><br>
+                                        <a class="th txt-1-box">อนุบาล-ป.3</a>
+                                        <a class="enSwitch txt-1-box">KG-Grade3</a>
+                                        <div class="txt-2-box">
+                                            <a class="th">โรงเรียนดาราสมุทร ศรีราชา</a>
+                                            <a class="enSwitch">Darasamutr school<br>at si racha</a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box">
+                                    <center>
+                                        <img class="imgbox" src="http://www.thaischool1.in.th/_files/webconfig/20070019_0_20190819-102818.png"><br>
+                                        <a class="th txt-1-box">ป.4-ป.6</a>
+                                        <a class="enSwitch txt-1-box">Grade4-Grade6</a>
+                                        <div class="txt-2-box">
+                                            <a class="th">โรงเรียนเทศบาลวัดราษฎร์นิยมธรรม</a>
+                                            <a class="enSwitch">Watratniyomtum<br>school<br></a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box">
+                                    <center>
+                                        <img class="imgbox" src="http://www.thaischool.in.th/_files/webconfig/20100711_0_20200227-151327.png"><br>
+                                        <a class="th txt-1-box">ม.1-ม.6</a>
+                                        <a class="enSwitch txt-1-box">Grade7-Grade12</a>
+                                        <div class="txt-2-box">
+                                            <a class="th">โรงเรียนศรีราชา<br>&nbsp</a>
+                                            <a class="enSwitch">Sriracha<br>school</a>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br class="spacer2">
+                    <div class="skills">
+                        <a Style="font-size: 2vmax;" class="th">ความสามารถ</a>
+                        <a Style="font-size: 3vmax;" class="enSwitch">Skills</a>
+                        <div class="grid-container" style="margin: 3vmax 5vmax 0 5vmax">
+                            <div class="grid-element">
+                                <i class="fa-brands fa-node-js"></i><br>
+                                <i style="font-size: 1.5vmax;">JS</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-html5"></i><br>
+                                <i style="font-size: 1.5vmax;">HTML</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-css3-alt"></i><br>
+                                <i style="font-size: 1.5vmax;">CSS</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-php"></i><br>
+                                <i style="font-size: 1.5vmax;">PHP</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-solid fa-database"></i><br>
+                                <i style="font-size: 1.5vmax;">MYSQL</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-java"></i><br>
+                                <i style="font-size: 1.5vmax;">Java</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-solid fa-terminal"></i><br>
+                                <i style="font-size: 1.5vmax;">Shell</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-solid fa-network-wired"></i><br>
+                                <i style="font-size: 1.5vmax;">Network</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-solid fa-circle-nodes"></i><br>
+                                <i style="font-size: 1.5vmax;">Blockchain</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-solid fa-c"></i><br>
+                                <i style="font-size: 1.5vmax;">C lang</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-python"></i><br>
+                                <i style="font-size: 1.5vmax;">Python</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-solid fa-cube"></i><br>
+                                <i style="font-size: 1.5vmax;">3D Design</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-unity"></i><br>
+                                <i style="font-size: 1.5vmax;">Unity</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-solid fa-u"></i><br>
+                                <i style="font-size: 1.5vmax;">Unreal Engine</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-docker"></i><br>
+                                <i style="font-size: 1.5vmax;">Docker</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-solid fa-feather"></i><br>
+                                <i style="font-size: 1.5vmax;">Apache</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-linux"></i><br>
+                                <i style="font-size: 1.5vmax;">Linux</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-osi"></i><br>
+                                <i style="font-size: 1.5vmax;">OpenCV</i>
+                            </div>
+                            <div class="grid-element">
+                                <i class="fa-brands fa-raspberry-pi"></i><br>
+                                <i style="font-size: 1.5vmax;">Raspberry pi</i>
+                            </div><div class="grid-element">
+                                <i class="fa-solid fa-font-awesome"></i><br>
+                                <i style="font-size: 1.5vmax;">Font awesome</i>
+                            </div>
+                        </div>
+                    </div>
+                    <br class="spacer2">
+                    <br id="certi">
+                    <a Style="font-size: 2vmax;" class="th">เกียรติบัตร</a>
+                    <a Style="font-size: 3vmax;" class="enSwitch">Certificates</a>
+                    <div class="slideshow-container" style="margin-top: 3vmax;">
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/1.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/2.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/3.png">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/4.png">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/5.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/6.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/7.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/8.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/9.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/10.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/11.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/12.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/13.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/14.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/15.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/16.png">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/17.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/18.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/19.jpg">
+                        </div>
+                        <div class="mySlides fade s1">
+                            <img src="img/certi/20.jpg">
+                        </div>
+                        <br>
+                        <a class="prev" onclick="plusSlides(-1, '1')" style="margin-right: 40px">❮</a>
+                        <a class="next" onclick="plusSlides(1, '1')" style="margin-left: 40px">❯</a>
+                    </div>
+                    <br>
+                    <div style="text-align:center">
+                        <span class="dot d1" onclick="currentSlide(1, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(2, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(3, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(4, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(5, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(6, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(7, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(8, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(9, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(10, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(11, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(12, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(13, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(14, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(15, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(16, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(17, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(18, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(19, '1')"></span>
+                        <span class="dot d1" onclick="currentSlide(20, '1')"></span>
+                    </div>
+                    
+                    <br class="spacer2">
+                    <br id="project">
+                    <a Style="font-size: 2vmax;" class="th">ผลงาน</a>
+                    <a Style="font-size: 3vmax;" class="enSwitch">Work Experience</a>
+                    <div class="slideshow-container" style="margin-top: 3vmax;">
+                        <div class="mySlides fade s2">
+                            <img src="img/workx/1.jpg">
+                            <br><br>
+                            <div class="text">
+                                <a class="th">เป็นที่ปรึกษาโครงงานวิทยาศาสตร์ของห้องเรียน MEP</a>
+                                <a class="enSwitch">Served as a consultant for MEP class science projects.</a>
+                            </div>
+                        </div>
+                        <div class="mySlides fade s2">
+                            <img src="img/workx/2.jpg">
+                            <br><br>
+                            <div class="text">
+                                <a class="th">ระบบจัดการหาพักนักศึกษา<br>(งานลูกค้าระหว่างเป็นฟรีแลนซ์)</a>
+                                <a class="enSwitch">Dormitory management system<br>(Work for customer while I was freelance)</a>
+                            </div>
+                        </div>
+                        <div class="mySlides fade s2">
+                            <img src="img/workx/3.jpg">
+                            <br><br>
+                            <div class="text">
+                                <a class="th">ระบบล็อคประตูบ้านอัจฉริยะ<br>ปลกล็อคด้วยการใช้ keycard, ลายนิ้วมือ, รหัส, โทรศัพท์, รีโมท, สแกนใบหน้า</a>
+                                <a class="enSwitch">Smart doorlock system<br>unlock by using keycard, fingerprint, password, phone, remote, face recognition.</a>
+                            </div>
+                        </div>
+                        <div class="mySlides fade s2">
+                            <img src="img/workx/4.jpg">
+                            <br><br>
+                            <div class="text">
+                                <a class="th">ระแบบไฟอัจฉริยะ<br>เปิด-ปิด ผ่านระแบบบลูทูธบทมือถือ</a>
+                                <a class="enSwitch">Smart light system<br>On-Off by bluetooth on mobile device</a>
+                            </div>
+                        </div>
+                        <div class="mySlides fade s2">
+                            <img src="img/workx/5.jpg">
+                            <br><br>
+                            <div class="text">
+                                <a class="th">รีโมทอินฟาเรดครอบจักวาล</a>
+                                <a class="enSwitch">Universal IR remote</a>
+                            </div>
+                        </div>
+                        <div class="mySlides fade s2">
+                            <img src="img/workx/6.jpg">
+                            <br><br>
+                            <div class="text">
+                                <a class="th">เครื่องแยกเม็ดหมากล้อม</a>
+                                <a class="enSwitch">Go(Game) stone separator</a>
+                            </div>
+                        </div>
+                        <div class="mySlides fade s2">
+                            <img src="img/workx/7.jpg">
+                            <br><br>
+                            <div class="text">
+                                <a class="th">เป็นผู้ดูแลบูทหมวดคอมพิวเตอร์เพื่อต้อนรับกรรมการตรวจงาน To be Number 1</a>
+                                <a class="enSwitch">People welcome the directors at the computer booth at To be Number 1 event.</a>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <a class="prev" onclick="plusSlides(-1, '2')" style="margin-right: 40px">❮</a>
+                        <a class="next" onclick="plusSlides(1, '2')" style="margin-left: 40px">❯</a>
+                    </div>
+                    <br>
+                    <div style="text-align:center">
+                        <span class="dot d2" onclick="currentSlide(1, '2')"></span>
+                        <span class="dot d2" onclick="currentSlide(2, '2')"></span>
+                        <span class="dot d2" onclick="currentSlide(3, '2')"></span>
+                        <span class="dot d2" onclick="currentSlide(4, '2')"></span>
+                        <span class="dot d2" onclick="currentSlide(5, '2')"></span>
+                        <span class="dot d2" onclick="currentSlide(6, '2')"></span>
+                        <span class="dot d2" onclick="currentSlide(7, '2')"></span>
+                    </div>
+                    
+                    <br class="spacer2">
+                    <br id="contact">
+                    <div>
+                        <a Style="font-size: 2vmax;" class="th">ช่องทางติดต่อ</a>
+                        <a Style="font-size: 3vmax;" class="enSwitch">Contact</a>
+                        <br><br><br><br>
+                        <div class="grid-container" style="margin: 3vmax 5vmax 0 5vmax">
+                            <div class="grid-element">
+                                <i>
+                                <a href="https://www.facebook.com/sittha.darapisut/" target="_blank" class="contact">
+                                    <i class="fa-brands fa-facebook fa-xl"></i>
+                                </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                    <a href="https://www.instagram.com/katoeiei2/" target="_blank" class="contact">
+                                        <i class="fa-brands fa-instagram fa-xl"></i>
+                                    </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                    <a href="https://www.linkedin.com/in/sittha-darapisut-5b018b255/" target="_blank" class="contact">
+                                        <i class="fa-brands fa-linkedin fa-xl"></i>
+                                    </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                    <a href="https://github.com/katoretb" target="_blank" class="contact">
+                                        <i class="fa-brands fa-github fa-xl"></i>
+                                    </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                    <a href="mailto:sitthadara@gmail.com" target="_blank" class="contact">
+                                        <i class="fa-regular fa-envelope fa-xl"></i>
+                                    </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                    <a href="https://discordapp.com/users/417141291361501185" target="_blank" class="contact">
+                                        <i class="fa-brands fa-discord fa-xl"></i>
+                                    </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                    <a href="https://stackoverflow.com/users/16944780/kato" target="_blank" class="contact">
+                                        <i class="fa-brands fa-stack-overflow fa-xl"></i>
+                                    </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                    <a href="https://www.twitch.tv/kato14123" target="_blank" class="contact">
+                                        <i class="fa-brands fa-twitch fa-xl"></i>
+                                    </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                    <a href="tel:0892475873" target="_blank" class="contact">
+                                        <i class="fa-solid fa-phone fa-xl"></i>
+                                    </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                <a href="https://www.hackerrank.com/katoretv" target="_blank" class="contact">
+                                    <i class="fa-brands fa-hackerrank fa-xl"></i>
+                                </a>
+                                </i>
+                            </div>
+                            <div class="grid-element">
+                                <i>
+                                    <a href="https://trello.com/u/katoritv" target="_blank" class="contact">
+                                        <i class="fa-brands fa-trello fa-xl"></i>
+                                    </a>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                </center>
             </div>
-            <div id="s4">
-                section4
-            </div>
-            <div id="s5">
-                section5
-            </div>
-            <div id="s6">
-                section6
-            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <!--<div class="footer">
+                <center>
+                    <ul class="row2">
+                        <li>
+                            <center>
+                                <b><div><a class="th">งงดิ</a> studio</div></b>
+                                <br><img src="img/icon.png" class="mainimg2">
+                            </center>
+                        </li>
+                        <li>
+                            <center>
+                                <b><div class="th">แผนผังเว็บไซต์</div></b>
+                                <br><a href="#home">หน้าหลัก</a>
+                                <br><a href="#about">เกี่ยวกับเรา</a>
+                                <br><a href="#service">บริการ</a>
+                                <br><a href="#contact">ติดต่อ</a>
+                            </center>
+                        </li>
+                        <li>
+                            <center>
+                                <b><div class="th">ช่องทางติดต่อ</div></b>
+                                <br><a href="" target="_blank">Facebook</a>
+                                <br><a href="https://discord.gg/2WXNgfsnSf" target="_blank">Discord</a>
+                                <br><a href="" target="_blank">Gmail</a>
+                                <br><a style="opacity:0;">.</a>
+                            </center>
+                        </li>
+                    </ul>
+                </center>
+            </div>-->
+        </div>
     </body>
 </html>
-<script>
-    window.onscroll = function() {
-        myFunction();
-        //console.info(isInViewport("s2"));
-    };
-    function myFunction() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.getElementById("test").clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        document.getElementById("myBar").style.width = scrolled + "%";
-    }
-    const box = document.querySelector('#s1');
-    const rect = box.getBoundingClientRect();
-    const isInViewport = rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-    console.log(isInViewport);  
-    
-    /*function isInViewport(el) {
-    const rect = document.getElementById(el).getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-
-    );
-}
-    
-    /*document.addEventListener('scroll', function (){
-        if(isInViewport("s2")){
-            console.log("s2")
-        }
-    },{
-        passive: true
-    });*/
+<script src="script.js" defer>
 </script>

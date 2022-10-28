@@ -1,0 +1,27 @@
+[data-theme="dark"] {
+    --bg-color: #141414;
+    --txt-color: #ffffff;
+    --contact-color: #f5f5f5;
+    --desknav-bg: #3b3b3b;
+    --desknav-txt: #f2f2f2;
+    --sticky-txt: #ededed;
+    --sticky-hover: #c4c4c4;
+    --dropdown-bg: #3b3b3b;
+    --dropdown-txt: #000000;
+    --box-bg: #2b2b2b;
+    --box-txt: #c9c9c9;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --txt-color: #000000;
+    --contact-color: #262626;
+    --desknav-bg: #ffffff;
+    --desknav-txt: #000000;
+    --sticky-txt: #787878;
+    --sticky-hover: #000000;
+    --dropdown-bg: #ffffff;
+    --dropdown-txt: #000000;
+    --box-bg: #ffffff;
+    --box-txt: #6b6b6b;
+}
