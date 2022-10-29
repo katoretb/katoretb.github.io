@@ -7,6 +7,7 @@
 .mySlides img {
     max-width: 70vw;
     max-height: 70vh;
+    height: 40vw;
     width: auto;
 }
 
